@@ -1,0 +1,44 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="container-fluid mt-3">
+  <div class="row">
+
+  
+                    <!--filter-->
+                <div class = "col-lg-2 mx-auto">
+                  <div class = "list-group">
+                    {% for category in catagories %}
+                    <a href="" class="list-group-item list-group-item-action">{{category.name}}</a>
+                    {% endfor %}
+
+                  </div>
+                </div>
+
+                  <div id ="products" class ="col-lg-10 mx-auto">
+                    <div class="row mx-auto">
+                {% for product in products %}
+                <div class="card mx-auto mb-3" style="width: 18rem;">
+                <img class="card-img-top" src="{{product.image.url}}" alt="Card image cap">
+                <div class="card-body">
+                  <p class="card-title">{{product.name}}</p>
+                  <p class="card-text">{{product.category}}</p>
+                  <b class="card-text">Rs.{{product.price}}</b>
+                  <p class="card-text">{{product.description}}</p>
+                  <p class="card-text">{{product.image.url}}</p>
+                  <a href="#" class="btn btn-primary">Add Cart</a>
+                </div>
+              </div>
+
+
+  {% endfor %}
+ </div>
+</div>
+</div>
+</div>
+      {% endblock %}
+    <!--Body-->
+    
+      
+
+   
