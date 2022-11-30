@@ -6,22 +6,29 @@
 <div class="container">
     <div class ="p-4 m-4">
         <div class="col-lg-5 mx-auto border rounded pt-4">
-            <form action="">
+            <form action="/signup" method ="POST">{% csrf_token %}
+                <div class="alert alert-danger">
+                    {{error}}
+                </div>
                 <div class="form-group">
                 <label>first Name</label>
-                <input type="text" name = "first Name" id="" placeholder="write first name"  class="form-control form-control-sm">
+                <input required type="text" name = "first_Name" id="" placeholder="write first name"  class="form-control form-control-sm">
                  </div>
                  <div class="form-group">
                     <label>last Name</label>
-                    <input type="text" name = "last Name" id="" placeholder="write last name"  class="form-control form-control-sm">
+                    <input type="text" name = "last_Name" id="" placeholder="write last name"  class="form-control form-control-sm">
                      </div>
                      <div class="form-group">
+                        <label>phone</label>
+                        <input type="text" name = "phone" id="" placeholder="write phone no here.."  class="form-control form-control-sm">
+                         </div>
+                     <div class="form-group">
                         <label>email</label>
-                        <input type="email" name = "email" id="" placeholder="write email here.."  class="form-control form-control-sm">
+                        <input required type="email" name = "email" id="" placeholder="write email here.."  class="form-control form-control-sm">
                          </div>
                          <div class="form-group">
                             <label>password</label>
-                            <input type="password" name = "password" id="" placeholder="***********"  class="form-control form-control-sm">
+                            <input required type="password" name = "password" id="" placeholder="***********"  class="form-control form-control-sm">
                              </div>  
                              <div class="form-group">
                             
