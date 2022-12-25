@@ -5,34 +5,48 @@
 
 <div class="container">
     <div class ="p-4 m-4">
-        <div class="col-lg-5 mx-auto border rounded pt-4">
+        <div class="col-lg-4 mt-4 mb-4 mx-auto border rounded pt-4">
+            <h3 class ="alert alert-light border roundded mt-4 mb-4">Create An Account</h3>
             <form action="/signup" method ="POST">{% csrf_token %}
+                {% if error %}
                 <div class="alert alert-danger">
                     {{error}}
                 </div>
+                {% endif %}
+                    <!-- first name  -->
                 <div class="form-group">
                 <label>first Name</label>
-                <input required type="text" name = "first_Name" id="" placeholder="write first name"  class="form-control form-control-sm">
+                <input type="text" value="{{values.first_name}}" name = "first_Name" id="" 
+                placeholder="write first name"  class="form-control form-control-sm">
                  </div>
+                 <!-- last name -->
                  <div class="form-group">
                     <label>last Name</label>
-                    <input type="text" name = "last_Name" id="" placeholder="write last name"  class="form-control form-control-sm">
+                    <input type="text"  value="{{values.last_name}}"name = "last_Name" id=""
+                     placeholder="write last name"  class="form-control form-control-sm">
                      </div>
+                     <!-- phone no -->
                      <div class="form-group">
                         <label>phone</label>
-                        <input type="text" name = "phone" id="" placeholder="write phone no here.."  class="form-control form-control-sm">
+                        <input type="text"  value="{{values.phone}}" name = "phone" id="" 
+                        placeholder="write phone no here.."  class="form-control form-control-sm">
                          </div>
+                         <!-- email -->
                      <div class="form-group">
-                        <label>email</label>
-                        <input required type="email" name = "email" id="" placeholder="write email here.."  class="form-control form-control-sm">
+                        <label>Email</label>
+                        <input  type="email" name = "email" id="" placeholder="write email here.." 
+                         class="form-control form-control-sm">
                          </div>
+                         <!-- password -->
                          <div class="form-group">
                             <label>password</label>
-                            <input required type="password" name = "password" id="" placeholder="***********"  class="form-control form-control-sm">
+                            <input  type="password"  value="{{values.password}}" name = "password" id="" 
+                            placeholder="***********"  class="form-control form-control-sm">
                              </div>  
+
                              <div class="form-group">
-                            
-                                <input type="submit" name = "submit" id="" value="create an account" class="btn btn-sm btn-info">
+                                <input type="submit" name = "submit" id="" value="create an account" 
+                                class="btn btn-sm btn-info col-lg-5">
                                  </div> 
             </form>
         

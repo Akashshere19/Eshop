@@ -1,4 +1,6 @@
 from django.db import models
+from Eshop.settings import *
+
 
 class Category(models.Model):
     name =models.CharField(max_length=20)
