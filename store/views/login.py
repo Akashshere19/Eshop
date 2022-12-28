@@ -5,6 +5,7 @@ from django.views import View
 
 
 class Login(View):
+
     def get(self,request):
         return render(request,'login.html') 
     def post(self,request):
@@ -15,6 +16,8 @@ class Login(View):
         if customer:
             flag= check_password(password,customer.password)
             if flag :
+               request.session['customer'] = customer.id
+               #request.session['customer_email'] = customer.email
                return redirect('homepage')
             else:
                 error_msg = 'Email and Password invalid..!'
@@ -25,3 +28,8 @@ class Login(View):
         print('name :',customer)
         print('email & pw:',email,password)
         return render(request,'login.html',{'error':error_msg}) 
+
+
+def logout(request):
+    request.session.clear()
+    return redirect('login')
