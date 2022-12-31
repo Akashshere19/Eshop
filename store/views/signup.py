@@ -21,6 +21,7 @@ class Signup(View):
                     'phone':phone,
                     'email':email,
                 }
+                print('value::',value)
                 error_msg = None
                 customer = Customer(first_name=first_name,last_name=last_name,
                                         phone=phone,email=email,
